@@ -1,4 +1,7 @@
-# spaceflights
+# Pre-requiste to run this workshop code on your machine
+* Git (Use https://github.com/git-guides/install-git )
+* Python 3.x (Use https://docs.conda.io/projects/conda/en/stable/ or direct from https://www.python.org/downloads/)
+* Kedro ( Use https://docs.kedro.org/en/stable/get_started/install.html#how-to-install-kedro-using-pip)
 
 ## Overview
 
