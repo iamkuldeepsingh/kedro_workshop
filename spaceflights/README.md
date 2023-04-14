@@ -43,18 +43,30 @@ kedro test
 
 To configure the coverage threshold, go to the `.coveragerc` file.
 
-## Project dependencies
+## How to visualize the pipelines in Kedro project
 
-To generate or update the dependency requirements for your project:
+Kedro-Viz is a key part of Kedro. It visualises the pipelines in a Kedro project by showing data, nodes, and the connections between them.
+
+The Kedro-Viz package needs to be installed separately as it is not part of the standard Kedro installation 
 
 ```
-kedro build-reqs
+pip install kedro-viz
 ```
 
-This will `pip-compile` the contents of `src/requirements.txt` into a new file `src/requirements.lock`. You can see the output of the resolution by opening `src/requirements.lock`.
+To start Kedro-Viz, type the following into your terminal from the project directory:
 
-After this, if you'd like to update your project requirements, please update `src/requirements.txt` and re-run `kedro build-reqs`.
+```
+kedro viz
+```
+The command opens a browser tab to serve the visualisation at `http://127.0.0.1:4141/`.
 
+### Automatic visualisation updates
+
+You can use the `--autoreload` flag to autoreload Kedro-Viz when a `Python` or `YAML` file changes in the project. Add the flag to the command you use to start Kedro-Viz:
+
+```
+kedro viz --autoreload
+```
 
 ## How to work with Kedro and notebooks
 
@@ -73,26 +85,6 @@ After installing Jupyter, you can start a local notebook server:
 
 ```
 kedro jupyter notebook
-```
-
-### JupyterLab
-To use JupyterLab, you need to install it:
-
-```
-pip install jupyterlab
-```
-
-You can also start JupyterLab:
-
-```
-kedro jupyter lab
-```
-
-### IPython
-And if you want to run an IPython session:
-
-```
-kedro ipython
 ```
 
 ### How to convert notebook cells to nodes in a Kedro project
